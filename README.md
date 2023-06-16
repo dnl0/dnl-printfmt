@@ -4,7 +4,7 @@ Custom print function that nobody asked for.
 ## About
 `dnl::printfmt` was made with two goals in mind: performance and ease of use. However, I failed miserably at both of those, and i have data to back it up.
 
-Using benchmarks from [fmt benchmarks](https://github.com/fmtlib/format-benchmark), it was calculated, that `dnl::printfmt` does the worst out of them all (except for `boost::format`): being, on average, about 20% slower than `iostream`. That being said, there are few points that need to be considered before using `dnl::printfmt`.
+Using benchmarks from [fmt benchmarks](https://github.com/fmtlib/format-benchmark), it was calculated, that `dnl::printfmt` does the worst out of them all (except for `boost::format`): being, on average, about 20% slower than `iostream` (though only with `-O3` option, without any optimisation it's much slower). That being said, there are few points that need to be considered before using `dnl::printfmt`.
 
 ### Pros
 - cool namespace
