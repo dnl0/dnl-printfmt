@@ -42,3 +42,6 @@ int main()
                            1.234, 42, 3.13, "str", (void*)1000, 'X'));
 }
 ```
+
+## Test
+check out my fork of [fmt format-benchmark](https://github.com/dnl0/format-benchmark) with `dnl::printfmt` included if you want to test it yourself.
