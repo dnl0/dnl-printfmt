@@ -1,10 +1,10 @@
-# dnl::print
+# dnl::printfmt
 Custom print function that nobody asked for.
 
 ## About
-`dnl::print` was made with two goals in mind: performance and ease of use. However, I failed miserably at both of those, and i have data to back it up.
+`dnl::printfmt` was made with two goals in mind: performance and ease of use. However, I failed miserably at both of those, and i have data to back it up.
 
-Using benchmarks from [fmt benchmarks](https://github.com/fmtlib/format-benchmark), it was calculated, that `dnl::printfmt` does the worst out of them all: being, on average, about 20% slower than `iostream`. That being said, there are few points that need to be considered before using `dnl::print`.
+Using benchmarks from [fmt benchmarks](https://github.com/fmtlib/format-benchmark), it was calculated, that `dnl::printfmt` does the worst out of them all: being, on average, about 20% slower than `iostream`. That being said, there are few points that need to be considered before using `dnl::printfmt`.
 
 ### Pros
 - cool namespace
