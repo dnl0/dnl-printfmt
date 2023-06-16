@@ -1,30 +1,11 @@
 cmake_minimum_required(VERSION 3.14)
 
-project("dnl print")
+project("dnl::printfmt testing")
 
 set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 
-set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
+add_subdirectory(dnl)
 
-add_executable(
-  main
-  main.cpp
-  include/dnl/print.cpp
-  include/dnl/print_helper.cpp
-)
+add_executable(test-dnl-printfmt test/test.cc)
 
-target_include_directories(
-  main
-  PRIVATE
-  include
-)
-
-target_compile_options(
-  main
-  PRIVATE
-  -Wall
-  -Wextra
-  -Wpedantic
-  -O3
-)
+target_link_libraries(test-dnl-printfmt dnl_printfmt)

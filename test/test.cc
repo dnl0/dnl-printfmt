@@ -1,4 +1,4 @@
-#include <dnl/print.hpp>
+#include "../dnl/print.hh"
 
 int main()
 {
