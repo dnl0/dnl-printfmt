@@ -27,8 +27,8 @@ Using benchmarks from [fmt benchmarks](https://github.com/fmtlib/format-benchmar
 
 int main()
 {
-    dnl::printfmt(std::cout, "Good {}! It's {}:{} right now{}\n", 
-                             "evening", 20, 45, '.');
+    dnl::printfmt(stdout, "Good {}! It's {}:{} right now{}\n", 
+                            "evening", 20, 45, '.');
 }
 ```
 ### Printing and formatting separately
@@ -37,11 +37,14 @@ int main()
 
 int main()
 {
-	// if not specified, `print` will use std::cout by default
+	// if not specified, `print` will use stdout by default
 	dnl::print(dnl::format("{}:{}:{}:{}:{}:{}:\n",
                            1.234, 42, 3.13, "str", (void*)1000, 'X'));
 }
 ```
 
 ## Test
-check out my fork of [fmt format-benchmark](https://github.com/dnl0/format-benchmark) with `dnl::printfmt` included if you want to test it yourself.
+Check out my fork of [fmt format-benchmark](https://github.com/dnl0/format-benchmark) with `dnl::printfmt` included if you want to test it yourself.
+
+## See also
+You can also check out `dev` branch, for a faster, "improved" version.
