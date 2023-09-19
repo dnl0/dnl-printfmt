@@ -1,23 +1,9 @@
-# dnl::printfmt
+# dnl::printfmt (dev)
 Custom print function that nobody asked for.
 
 ## About
-`dnl::printfmt` was made with two goals in mind: performance and ease of use. However, I failed miserably at both of those, and i have data to back it up.
-
-Using benchmarks from [fmt benchmarks](https://github.com/fmtlib/format-benchmark), it was calculated, that `dnl::printfmt` does the worst out of them all (except for `boost::format`): being, on average, about 20% slower than `iostream`. That being said, there are few points that need to be considered before using `dnl::printfmt`.
-
-### Pros
-- cool namespace
-- still easier to use than `iostream` (not a high bar)
-### Cons
-- slow
-- unavailable on Windows and BSD
-- limited functionality
-- not tested properly
-- no support
-- probably contains a lot of bugs
-- uses inline assembly
-- generally weird design decisions
+`dnl::printfmt` in branch `dev` is a version of `dnl::printfmt` that uses `puts` instead of inline assembly for output. This change dramatically increases performance, running even faster than `iostream` way of output. It also helps with
+availability for multiple platforms. However, i will probably try to improve my inline assembly to make it just a little bit more exciting, instead of just relying on out-of-the-box instruments.
 
 ## Examples
 ### Available formats
@@ -27,21 +13,17 @@ Using benchmarks from [fmt benchmarks](https://github.com/fmtlib/format-benchmar
 
 int main()
 {
-    dnl::printfmt(std::cout, "Good {}! It's {}:{} right now{}\n", 
-                             "evening", 20, 45, '.');
+    dnl::printfmt("Good {}! It's {}:{} right now{}\n", 
+                    "evening", 20, 45, '.');
 }
 ```
-### Printing and formatting separately
+### Using `format`
 ```cpp
 #include "dnl/print.hpp"
 
 int main()
 {
-	// if not specified, `print` will use std::cout by default
-	dnl::print(dnl::format("{}:{}:{}:{}:{}:{}:\n",
-                           1.234, 42, 3.13, "str", (void*)1000, 'X'));
+	auto formatted_string = dnl::format("{}:{}:{}:{}:{}:{}:\n",
+                            1.234, 42, 3.13, "str", (void*)1000, 'X'));
 }
 ```
-
-## Test
-check out my fork of [fmt format-benchmark](https://github.com/dnl0/format-benchmark) with `dnl::printfmt` included if you want to test it yourself.
